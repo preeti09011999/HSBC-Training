@@ -1,0 +1,11 @@
+@charset "ISO-8859-1";
+#nameerror{
+	color:red;
+}
+form{
+	text-align:center;
+}
+#submitbtn{
+	background-color:blue;
+	color:white;
+}

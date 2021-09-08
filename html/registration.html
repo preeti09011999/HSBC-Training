@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<link rel="stylesheet" href="..\css\style.css">
+<title>Insert title here</title>
+</head>
+<body>
+	<form action="" onSubmit="showDetails()">
+		<input type="text" onblur="validateId()" id="id" placeholder="Enter Id"><br><br>
+		<input type="text" placeholder="Enter Name" onblur="validate()" id="name"><br><br>
+		<input type="radio" id="male"><label>Male</label>
+		<input type="radio" id="female"><label>Female</label><br>
+		<!-- Event handling -->
+		<br>
+		<span id="nameerror"></span>
+		<br>
+		<input id="submitbtn" type="submit">
+	</form>
+	<script src="..\script\validate.js"></script>
+</body>
+</html>
