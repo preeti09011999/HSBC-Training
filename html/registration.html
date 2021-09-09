@@ -3,20 +3,51 @@
 <head>
 <meta charset="ISO-8859-1">
 <link rel="stylesheet" href="..\css\style.css">
-<title>Insert title here</title>
+<title>Register</title>
 </head>
 <body>
-	<form action="" onSubmit="showDetails()">
-		<input type="text" onblur="validateId()" id="id" placeholder="Enter Id"><br><br>
-		<input type="text" placeholder="Enter Name" onblur="validate()" id="name"><br><br>
-		<input type="radio" id="male"><label>Male</label>
-		<input type="radio" id="female"><label>Female</label><br>
-		<!-- Event handling -->
-		<br>
-		<span id="nameerror"></span>
-		<br>
-		<input id="submitbtn" type="submit">
-	</form>
-	<script src="..\script\validate.js"></script>
+	<div class="col-25"></div>
+	<div class="col-50 container">
+		<form action="" onsubmit="showDetails()">
+			<duv class="row"><h2>Sign Up</h2></duv>
+			<div class="row">
+				<div class="col-25">
+					<label>Id</label>
+				</div>
+				<div class="col-75">
+					<input type="text" onblur="validateId()" id="id" placeholder="Enter Id">
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-25">
+					<label>Name</label>
+				</div>
+				<div class="col-75">
+					<input type="text" placeholder="Enter Name" onblur="validate()" id="name">
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-25">
+					<label>Gender</label>
+				</div>
+				<div class="col-75">
+					<div class="row">
+						<div class="col-50">
+							<input type="radio" id="gender_male"><label>Male</label>
+						</div>
+						<div class="col-50">
+							<input type="radio" id="gender_female"><label id="gender_female">Female</label>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row" id="nameerror"></div>
+			<div class="row">
+				<input id="submitbtn" type="submit">
+			</div>
+		</form>
+	</div>
+	<div class="col-25"></div>
+	<script src="../js/validate.js"></script>
 </body>
 </html>
