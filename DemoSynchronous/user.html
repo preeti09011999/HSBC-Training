@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<button onclick="sendUsers()"> Show Users</button>
+	<script>
+		function sendUsers(){
+			// json.parse() - converts string to object
+			// json.stringify() - converts object to string
+			let obj = {"id":1, "name":"abc"};
+			let str = JSON.stringify(obj);
+			console.log(str);
+			let xhttp = new XMLHttpRequest();
+			xhttp.open("GET", "http://localhost:8080/DemoSynchronous/users", true);
+			xhttp.send();
+			xhttp.onload = function(){
+				console.log(xhttp.responseText);
+				console.log(typeof xhttp.responseText);
+				console.log('------------------------------------------');
+				let users = JSON.parse(xhttp.responseText);
+				console.log(users);
+				console.log(typeof users);
+				console.log('------------------------------------------');
+				document.write("<table><tr><th>ID</th><th>Name</th></tr>");
+				for(let i=0; i < users.length; i++){
+					document.write("<tr><td>" + users[i].id + "</td><td>"+ users[i].name + "</td></tr>");
+					console.log(users[i].id + " " + users[i].name);
+				}
+			}
+		}
+	</script>
+</body>
+</html>

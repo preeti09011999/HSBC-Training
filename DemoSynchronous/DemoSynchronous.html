@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<script>
+	let xhttp = new XMLHttpRequest();
+	xhttp.open("GET", "http://localhost:8080/DemoSynchronous/process", true); 
+	xhttp.send(); //blocking call i.e no call after this line will be excecuted unless until this call get executed completely
+	xhttp.onload = function(){		
+		console.log("Done" + xhttp.responseText); // if we'll pass true in open method, then this line will exceute even before server start
+	}
+	console.log("OK");
+</script>
+</body>
+</html>
