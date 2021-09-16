@@ -19,11 +19,11 @@ dao.addEmployee(e)
 employees = dao.findAllEmployees()
 
 for employee in employees :
-    print(employee.show())
+    employee.show()
 
 # Finding employee id in employees
-employee = dao.findAllEmployeeById(2)
-print(employee.show())
+dao.findAllEmployeeById(1).show()
+
 
 
 
