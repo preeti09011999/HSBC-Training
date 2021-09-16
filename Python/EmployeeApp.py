@@ -1,5 +1,8 @@
-from EmployeeDao import EmployeeDao
-from Employee import Employee
+import sys
+import os
+sys.path.append(os.path.abspath("C:\\Users\\preet\\Documents\\HSBC_Assignments\\EmployeePayRoll"))
+from com.hsbc.dao.EmployeeDao import EmployeeDao
+from com.hsbc.entity.Employee import Employee
 
 print('Working on Employee Payroll')
 
