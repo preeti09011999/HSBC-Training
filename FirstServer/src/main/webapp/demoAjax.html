@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<button onclick="getEmployeeDetails(event)"> Get Details</button>
+<button onclick="getProjectDetails(event)"> Get Project Details</button>
+	<div id="content"></div>
+	<div id="name"></div>
+	<script>
+		
+		function getEmployeeDetails(event){
+			let s = new XMLHttpRequest(); //js Object
+			s.open("GET", "http://localhost:8080/FirstServer/employee.json");
+			s.send(); // This method will actually give request to a server
+			
+			let object;
+			s.onload = function(){
+				console.log(s.responseText);
+				object = JSON.parse(s.responseText);				
+				document.getElementById('content').innerHTML = "NAME - " + object.name;
+				document.getElementById('name').innerHTML = "ID - " + object.id;
+				document.write("<table><tr><th>ID</th><th>Name</th></tr>");
+				console.log(object);
+				// s.open("http method", "server url"); connect to this resource using the GET Method
+				console.log(object.length);
+				for(var i=0;i<object.length;i++){
+					console.log("a");
+					document.write("<tr><td>" + object[i].id + "</td><td>"+ object[i].name + "</td></tr>");
+				}
+				document.write("</table");
+			}
+		}
+			
+			function getProjectDetails(event){
+				let obj = new XMLHttpRequest(); //js Object
+				obj.open("GET", "http://localhost:8080/FirstServer/projectDetails.json");
+				obj.send(); // This method will actually give request to a server
+				
+				let object;
+				obj.onload = function(){
+					console.log(obj.responseText);
+					object = JSON.parse(obj.responseText);				
+					document.getElementById('content').innerHTML = "ProjectId - " + object.projectId;
+					document.getElementById('name').innerHTML = "Project Name - " + object.projectName;
+					document.getElementById('name').innerHTML = "Employee Id - " + object.employeeId;
+					document.write("<table><tr><th>Project Id</th><th>Project Name</th><th>Employee Id</th></tr>");
+					console.log(object);
+					// s.open("http method", "server url"); connect to this resource using the GET Method
+					for(var i=0;i<object.length;i++){
+						console.log("a");
+						document.write("<tr><td>" + object[i].projectId + "</td><td>"+ object[i].projectName +  "</td><td>" + object[i].employeeId + "</td></tr>");
+					}
+					document.write("</table");
+				}
+				
+			}
+		
+	</script>
+</body>
+</html>
+

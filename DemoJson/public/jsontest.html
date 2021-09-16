@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<button onclick="loadData()">Load Data</button>
+	<script type="text/javascript">	
+		let jsonString = {"name":"Preeti", "id":1};
+		let jsonArray =	[{"name":"Somya", "id":2}, {"name":"Preeti", "id":2}];
+		function loadData(){
+			document.write("<table><tr><th>ID</th><th>Name</th></tr>");
+			for(var i=0;i<jsonArray.length;i++){
+				document.write("<tr><td>" + jsonArray[i].id + "</td><td>"+ jsonArray[i].name + "</td></tr>");
+			}
+			document.write("</table");
+		}
+		
+		
+		function loadData2(){
+			document.createElement("table");
+			var table = table.insertRow(-1);
+			var tr = table.insertRow(-1);
+			table.appendChild(tr);
+			var th = document.createElement("th");
+			th.innerHTML = "NAME";
+			tr.appendChild(th);
+			th = document.createElement("th");
+			th.innerHTML = "ID";
+			tr.appendChild(th);
+			for(var i=0;i<jsonArray.length;i++){
+				var tr = document.createElement("tr");
+				var td = document.createElement("td");
+				td.innerHTML = jsonArray[i].name;
+				td = document.createElement("td");
+				tr.appendChild(td);
+				td.innerHTML = jsonArray[i].id;
+				tr.appendChild(td);
+			}
+		}
+		
+		
+		
+	</script>
+</body>
+</html>
